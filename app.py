@@ -7,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 db = mysql.connector.connect(
+    use_pure=True,
     host="student-login-db-aniketaux-db1.g.aivencloud.com",
     port=27405,
     user="avnadmin",
@@ -14,6 +15,7 @@ db = mysql.connector.connect(
     database="defaultdb",
     ssl_ca=os.path.join(os.path.dirname(__file__), "ca.pem"),
     ssl_verify_cert=True
+    
 )
 
 print("MySQL Connected Successfully!")
