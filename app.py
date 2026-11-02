@@ -12,7 +12,7 @@ db = mysql.connector.connect(
     user="avnadmin",
     password=os.environ["DB_PASSWORD"],
     database="defaultdb",
-    ssl_ca="ca.pem",
+    ssl_ca=os.path.join(os.path.dirname(__file__), "ca.pem"),
     ssl_verify_cert=True
 )
 
